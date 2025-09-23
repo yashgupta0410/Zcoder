@@ -1,7 +1,7 @@
 const Promblem = require('../model/Promblem')
 const User = require("../model/User")
 const asyncHandler = require('express-async-handler')
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require("dotenv").config();
 const {signedCookies} = require('cookie-parser')
@@ -20,7 +20,7 @@ const login = asyncHandler(async (req,res) => {
       return res.status(401).json({meassage : 'Unauthorized'})
   }
 
-  const match = await bcrypt.compare(password ,foundUser.password)
+  const match = (password ===foundUser.password)
 
   if(!match) return res.status(401).json({message : 'Unauthorized'});
 

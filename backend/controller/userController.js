@@ -1,5 +1,5 @@
 const User = require('../model/User')
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const asyncHandler = require("express-async-handler")
 const mongoose = require('mongoose')
 
@@ -27,11 +27,11 @@ const  createNewUser = asyncHandler(async (req,res) => {
       return res.status(409).json({message : 'Duplicate Username'});
      }
 
-     const hashedPwd = await bcrypt.hash(password,10);
-     console.log(password,hashedPwd);
+    //  const hashedPwd = await bcrypt.hash(password,10);
+    //  console.log(password,hashedPwd);
      const userObject = {
        username ,
-       "password" : hashedPwd ,
+       "password" : password ,
        email ,
        profileUrl
      }
@@ -74,7 +74,7 @@ user.email = email ;
 user.profileUrl = profileUrl ;
 
 if(password) { 
-  user.password = await bcrypt.hash(password, 10) 
+  user.password = password
 }
 const updatedUser = await user.save()
 
