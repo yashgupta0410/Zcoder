@@ -2,7 +2,7 @@
 
 Welcome to **Zcoder**!  
 This repository is a project by <br>
-[@yashgupta0410](https://github.com/yashgupta0410).
+[@yashgupta0410](https://github.com/yashgupta0410). and <br>[@Vikas-Bishnoi-hub](https://github.com/Vikas-Bishnoi-hub).
 
 ---
 
